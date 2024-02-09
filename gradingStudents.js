@@ -1,17 +1,17 @@
-const getGradeRound = function (num) {
-  const reminder = num % 5;
-  return reminder > 0 ? num + (5 - reminder) : num
+const getGradeRound = function (grade) {
+  const reminder = grade % 5;
+  return reminder > 0 ? grade + (5 - reminder) : grade
 }
 const gradingStudents = function (grades) {
-  // Write your code here
-  const studentGrades = [];
+  const studentRoundGrades = [];
   grades.forEach(grade => {
     if (grade < 37 || grade % 5 < 3) {
-      studentGrades.push(grade);
+      studentRoundGrades.push(grade);
     } else {
-      studentGrades.push(getGradeRound(grade));
+      studentRoundGrades.push(getGradeRound(grade));
     }
   });
-  return studentGrades;
+  return studentRoundGrades;
 }
-console.log(gradingStudents([73, 67, 38, 33]));
+const studentGrades = [73, 67, 38, 33];
+console.log(gradingStudents(studentGrades));

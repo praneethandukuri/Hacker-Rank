@@ -1,26 +1,28 @@
 const getRatio = function (numerator, denominator) {
   return (numerator / denominator).toFixed(6);
 }
-function plusMinus(arr) {
-  // Write your code here
-  const positives = [];
-  const negatives = [];
-  const zeroes = [];
-  for (let index = 0; index < arr.length; index++) {
-    if (arr[index] > 0) {
-      positives.push(arr[index]);
-    } else if (arr[index] < 0) {
-      negatives.push(arr[index]);
+const plusMinus = function (integers) {
+  const signValues = {
+    positives: [],
+    negatives: [],
+    zeroes: []
+
+  }
+  for (let index = 0; index < integers.length; index++) {
+    if (integers[index] > 0) {
+      signValues.positives.push(integers[index]);
+    } else if (integers[index] < 0) {
+      signValues.negatives.push(integers[index]);
     } else {
-      zeroes.push(arr[index]);
+      signValues.zeroes.push(integers[index]);
     }
   }
-  const positivesRatio = getRatio(positives.length, arr.length)
-  const negativesRatio = getRatio(negatives.length, arr.length)
-  const zeroesRatio = getRatio(zeroes.length, arr.length)
+  const positivesRatio = getRatio(signValues.positives.length, integers.length)
+  const negativesRatio = getRatio(signValues.negatives.length, integers.length)
+  const zeroesRatio = getRatio(signValues.zeroes.length, integers.length)
   console.log(positivesRatio)
   console.log(negativesRatio)
   console.log(zeroesRatio)
 }
-const arr = [-4, 3, -9, 0, 4, 1];
-plusMinus(arr);
+const integersValues = [-4, 3, -9, 0, 4, 1];
+plusMinus(integersValues);

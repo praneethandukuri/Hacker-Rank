@@ -1,14 +1,14 @@
-const getStaircase = function (n) {
-  const stairCase = [];
+const getStaircase = function (rows) {
+  const stairCaseShape = [];
   let row = "";
   let spaces = "";
   let hashes = "";
-  for (let currentRow = 1; currentRow <= n; currentRow++) {
-    spaces = " ".repeat(n - currentRow);
+  for (let currentRow = 1; currentRow <= rows; currentRow++) {
+    spaces = " ".repeat(rows - currentRow);
     hashes = "#".repeat(currentRow);
     row = spaces + hashes;
-    stairCase.push(row);
+    stairCaseShape.push(row);
   }
-  return stairCase.join("\n");
+  return stairCaseShape.join("\n");
 }
 console.log(getStaircase(6));
